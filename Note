@@ -1,0 +1,7 @@
+    WebDriverManager.chromedriver().setup();
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://cybertekschool.com");
+// This 3 step for open browser, we used here only chrome but we can navigate to others browsers also.
+
+// We downloaded 3 dependencies javafaker, selenium and webdrivermanager
+
