@@ -1,5 +1,6 @@
 package com.cybertek.tests.day5_xpath;
 
+import com.cybertek.utilities.Verify;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,13 +26,14 @@ public class AmazonTest {
         String expectedResult = getResult.getText();
         String actaulResult = "1-48 of 498 results for";
 
-        if (expectedResult.equals(actaulResult)){
-            System.out.println("Passed");
-        }else{
-            System.out.println("Failed");
-            System.out.println("actaulResult = " + actaulResult);
-            System.out.println("expectedResult = " + expectedResult);
-        }
+        Verify verifyResult = Verify.verifyResult(expectedResult, actaulResult);
+//        if (expectedResult.equals(actaulResult)){
+//            System.out.println("Passed");
+//        }else{
+//            System.out.println("Failed");
+//            System.out.println("actaulResult = " + actaulResult);
+//            System.out.println("expectedResult = " + expectedResult);
+//        }
 
         driver.quit();
     }
