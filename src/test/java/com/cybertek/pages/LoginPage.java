@@ -39,4 +39,19 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         loginBtn.click();
     }
+    /*
+        @FindAll({
+            @FindBy(id = "prependedInput")
+            @FindBY(name = _username")
+        })
+        // give us option to use multiple locators, if at least one of them is matching it will find the web
+        element
+     */
+    /*
+        @FindAll({
+            @FindBy(id = "prependedInput")
+            @FindBY(name = _username")
+        })
+        // if all locators matching with element then it will return it. AND logic applies here.
+     */
 }
