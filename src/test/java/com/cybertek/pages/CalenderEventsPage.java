@@ -9,6 +9,6 @@ public class CalenderEventsPage extends BasePage{
     public CalenderEventsPage() {
         PageFactory.initElements(Driver.get(), this);
     }
-    @FindBy(css = "[title='Create Calender event']")
+    @FindBy(css = "[title='Create Calendar event']")
     public WebElement createCalenderEvent;
 }
