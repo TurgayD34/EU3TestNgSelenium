@@ -28,7 +28,7 @@ public class PageSubtitleTest extends TestBase {
         loginPage.loginAsDriver();
 
         DashboardPage dashboardPage = new DashboardPage();
-
+        dashboardPage.waitUntilLoaderScreenDisappear();
         //Verify that page subtitle is Quick Launchpad
 
         String expected = "Quick Launchpad";
