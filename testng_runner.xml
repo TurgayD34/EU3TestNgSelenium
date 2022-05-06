@@ -5,16 +5,17 @@
 <!--            <package name="com.cybertek.tests.days14_extent_reports"></package>-->
 <!--            <package name="com.cybertek.tests.days11_webtables"></package>-->
 <!--            <package name=".*"></package>   run all the packages-->
+            <package name="com.cybertek.tests.days13_pom"></package>
         </packages>
-        <classes>
-<!--            <class name="com.cybertek.tests.days14_extent_reports.ExtentDemoTest"></class>-->
-<!--            This is for specific class smoke test-->
-            <class name="com.cybertek.tests.days11_webtables.webTablesExample">
-                <methods>
-                    <include name="getAllHeaders"></include>
-<!--                    <exclude name=""></exclude> omit a test case and run the rest of the test-->
-                </methods>
-            </class>
-        </classes>
+<!--        <classes>-->
+<!--&lt;!&ndash;            <class name="com.cybertek.tests.days14_extent_reports.ExtentDemoTest"></class>&ndash;&gt;-->
+<!--&lt;!&ndash;            This is for specific class smoke test&ndash;&gt;-->
+<!--            <class name="com.cybertek.tests.days11_webtables.webTablesExample">-->
+<!--                <methods>-->
+<!--                    <include name="getAllHeaders"></include>-->
+<!--&lt;!&ndash;                    <exclude name=""></exclude> omit a test case and run the rest of the test&ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
     </test>
 </suite>
