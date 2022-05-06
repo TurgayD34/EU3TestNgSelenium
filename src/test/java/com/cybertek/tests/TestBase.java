@@ -3,17 +3,20 @@ package com.cybertek.tests;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -58,9 +61,24 @@ public class TestBase {
         wait = new WebDriverWait(driver, 10);
         driver.get(ConfigurationReader.get("url"));
     }
-
+    //ITEstResult class describes the result of a test in TestNG
     @AfterMethod
-    public void tearDown() throws InterruptedException {
+    public void tearDown(ITestResult result) throws InterruptedException, IOException {
+        //If the fails
+        if (result.getStatus() == ITestResult.FAILURE){
+            //record the name of failed test case
+            extentLogger.fail(result.getName());
+
+            //take the screenshot and return location of screenshot
+            String screenShotPath = BrowserUtils.getScreenshot(result.getName());
+
+            //add screenshot to report
+            extentLogger.addScreenCaptureFromPath(screenShotPath);
+
+            //capture the exception and put inside the report
+            extentLogger.fail(result.getThrowable());
+        }
+
         Thread.sleep(2000);
         Driver.closeDriver();
     }
