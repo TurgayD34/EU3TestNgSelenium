@@ -27,7 +27,7 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         loginBtn.click();
     }
-    public void loginAsStoreManager(String username, String password){
+    public void login(String username, String password){
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         loginBtn.click();
