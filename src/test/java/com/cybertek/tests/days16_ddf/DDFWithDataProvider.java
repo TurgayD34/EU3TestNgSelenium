@@ -22,4 +22,6 @@ public class DDFWithDataProvider {
     public void test1(String tvshow, String rating){
         System.out.println("Tv show: "+tvshow+" has rating "+rating);
     }
+
+    
 }
