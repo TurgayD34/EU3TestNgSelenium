@@ -3,6 +3,7 @@ package com.cybertek.tests.days16_ddf;
 import com.cybertek.utilities.ExcelUtil;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -32,5 +33,9 @@ public class ExcelUtilsDemo {
         }
         //get a name as a value
         System.out.println("dataList.get(2) = " + dataList.get(2).get("firstname"));
+
+        //get all data in 2d array
+        String [][] dataArray = qa3Sheet.getDataArray();
+        System.out.println("Arrays.deepToString(dataArray) = " + Arrays.deepToString(dataArray));
     }
 }
